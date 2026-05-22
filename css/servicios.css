@@ -118,9 +118,82 @@
 .service-card h3 {
     font-size: 1.5rem;
     color: var(--primary-color);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
     font-weight: 600;
     letter-spacing: 0.5px;
+}
+
+/* TAGLINE (Subtitle) */
+.service-tagline {
+    font-size: 0.95rem;
+    color: var(--accent-color);
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: 0.3px;
+}
+
+/* INTRO */
+.service-intro {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    text-align: justify;
+}
+
+/* DETALLES DEL SERVICIO */
+.service-details {
+    background: rgba(255, 255, 255, 0.6);
+    padding: var(--spacing-md);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 6px;
+    margin-bottom: var(--spacing-md);
+    text-align: left;
+}
+
+.service-details strong {
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.95rem;
+}
+
+.service-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-details li {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    padding: 4px 0;
+    line-height: 1.6;
+}
+
+/* RESULTADO */
+.service-result {
+    background: rgba(232, 163, 176, 0.08);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    margin-bottom: var(--spacing-lg);
+    text-align: justify;
+    border: 1px solid rgba(232, 163, 176, 0.3);
+}
+
+.service-result strong {
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.95rem;
+}
+
+.service-result p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    line-height: 1.7;
+    margin: 0;
 }
 
 /* DESCRIPCIÓN */
