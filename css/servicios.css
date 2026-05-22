@@ -1,0 +1,212 @@
+/* =========================================
+   SERVICIOS.CSS - Estilos de la Página de Servicios
+   Tarjetas Mejoradas con Tema Rosa Minimalista
+   ========================================= */
+
+/* SECCIÓN SERVICIOS */
+.services {
+    padding: var(--spacing-xl) 0;
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: var(--font-script);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    padding-bottom: var(--spacing-lg);
+}
+
+/* Línea decorativa bajo el título */
+.services h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    border-radius: 2px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+/* TARJETA DE SERVICIO - MEJORADA */
+.service-card {
+    background: linear-gradient(135deg, var(--secondary-color), var(--white));
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-light);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fondo gradiente único para cada tarjeta */
+.service-card:nth-child(1) {
+    background: linear-gradient(135deg, #f5e6e8 0%, #ffffff 100%);
+    border-color: var(--accent-color);
+}
+
+.service-card:nth-child(2) {
+    background: linear-gradient(135deg, #f0c5d1 0%, #ffffff 100%);
+    border-color: var(--accent-dark);
+}
+
+.service-card:nth-child(3) {
+    background: linear-gradient(135deg, #d4e8f0 0%, #ffffff 100%);
+    border-color: #a8d8f0;
+}
+
+/* Efecto hover mejorado */
+.service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-heavy);
+    border-color: var(--accent-color);
+}
+
+/* Línea decorativa en hover */
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+/* ICONO DEL SERVICIO */
+.service-icon {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: rgba(232, 163, 176, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1) rotate(5deg);
+    background: rgba(232, 163, 176, 0.2);
+}
+
+/* TÍTULO DEL SERVICIO */
+.service-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* DESCRIPCIÓN */
+.service-card p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+    flex-grow: 1;
+    text-align: justify;
+}
+
+/* BOTÓN */
+.service-card .btn {
+    align-self: center;
+    margin-top: auto;
+    min-width: 180px;
+}
+
+/* RESPONSIVE SERVICIOS */
+@media (max-width: 768px) {
+    .services {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .services h2 {
+        font-size: 2rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-lg);
+    }
+
+    .service-card {
+        padding: var(--spacing-md);
+    }
+
+    .service-icon {
+        font-size: 3rem;
+        width: 70px;
+        height: 70px;
+    }
+
+    .service-card h3 {
+        font-size: 1.35rem;
+    }
+
+    .service-card p {
+        font-size: 0.95rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .services h2 {
+        font-size: 1.5rem;
+        padding-bottom: var(--spacing-md);
+    }
+
+    .service-card {
+        padding: var(--spacing-sm);
+        border-radius: 10px;
+    }
+
+    .service-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .service-icon {
+        font-size: 2.5rem;
+        width: 65px;
+        height: 65px;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .service-card .btn {
+        font-size: 0.9rem;
+        padding: 0.75rem 1.5rem;
+        min-width: 150px;
+    }
+}

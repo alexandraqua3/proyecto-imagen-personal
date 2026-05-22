@@ -1,0 +1,217 @@
+/* =========================================
+   SOBRE-MI.CSS - Estilos de la Página Sobre Nosotros
+   Galería Descendente de Perfiles
+   ========================================= */
+
+/* SECCIÓN SOBRE */
+.about {
+    padding: var(--spacing-xl) 0;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.about-header h2 {
+    font-size: 2.5rem;
+    font-family: var(--font-script);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.about-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.about-description strong {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* GALERÍA DE PERFILES DESCENDENTE */
+.team-profiles {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    max-width: 900px;
+    margin: var(--spacing-xl) auto;
+}
+
+/* TARJETA DE PERFIL */
+.profile-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, var(--secondary-color), var(--white));
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--accent-color);
+}
+
+/* Alternar imágenes a derecha e izquierda */
+.profile-card:nth-child(even) {
+    grid-template-columns: 1fr auto;
+    direction: rtl;
+}
+
+.profile-card:nth-child(even) > * {
+    direction: ltr;
+}
+
+.profile-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 320px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.profile-image img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 3px solid var(--accent-color);
+    box-shadow: var(--shadow-medium);
+    background: linear-gradient(135deg, var(--pastel-blue), var(--accent-light));
+}
+
+/* Fallback para cuando las imágenes no se cargan */
+.profile-image img:not([src]),
+.profile-image img[alt] {
+    content: attr(alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--white);
+}
+
+/* Placeholders con gradientes para cada perfil */
+.profile-card:nth-child(1) .profile-image img {
+    background: linear-gradient(135deg, #f0c5d1 0%, #e8a3b0 100%);
+}
+
+.profile-card:nth-child(2) .profile-image img {
+    background: linear-gradient(135deg, #d4e8f0 0%, #a8d8f0 100%);
+}
+
+.profile-card:nth-child(3) .profile-image img {
+    background: linear-gradient(135deg, #f0d4c8 0%, #e8b89f 100%);
+}
+
+.profile-card:nth-child(4) .profile-image img {
+    background: linear-gradient(135deg, #d4e8d4 0%, #a8d8a8 100%);
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--spacing-md) 0;
+}
+
+.profile-info h3 {
+    font-size: 1.75rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.profile-role {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+}
+
+.profile-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    text-align: justify;
+}
+
+/* RESPONSIVE SOBRE NOSOTROS */
+@media (max-width: 768px) {
+    .about-header h2 {
+        font-size: 2rem;
+    }
+
+    .about-description {
+        font-size: 1rem;
+    }
+
+    .profile-card {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        padding: var(--spacing-md);
+    }
+
+    .profile-card:nth-child(even) {
+        grid-template-columns: 1fr;
+        direction: ltr;
+    }
+
+    .profile-image {
+        width: 100%;
+        height: 250px;
+    }
+
+    .profile-info {
+        text-align: center;
+    }
+
+    .profile-description {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-description {
+        font-size: 0.95rem;
+    }
+
+    .profile-card {
+        padding: var(--spacing-sm);
+        gap: var(--spacing-sm);
+    }
+
+    .profile-image {
+        height: 200px;
+    }
+
+    .profile-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .profile-role {
+        font-size: 1rem;
+    }
+
+    .profile-description {
+        font-size: 0.95rem;
+    }
+}
