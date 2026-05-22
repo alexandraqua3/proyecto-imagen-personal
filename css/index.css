@@ -27,6 +27,16 @@
     line-height: 1.4;
 }
 
+.hero-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+    text-align: justify;
+    opacity: 0.9;
+    max-width: 95%;
+}
+
 .hero-content .btn {
     align-self: flex-start;
     margin-top: var(--spacing-md);
@@ -87,6 +97,12 @@
         font-size: 1.75rem;
     }
 
+    .hero-subtitle {
+        font-size: 1rem;
+        max-width: 100%;
+        text-align: left;
+    }
+
     .placeholder-image {
         max-width: 300px;
     }
@@ -95,6 +111,12 @@
 @media (max-width: 480px) {
     .hero-title {
         font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: var(--spacing-md);
     }
 
     .placeholder-image {
