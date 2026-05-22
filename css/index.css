@@ -37,6 +37,53 @@
     max-width: 95%;
 }
 
+.hero-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, rgba(232, 163, 176, 0.08), rgba(245, 230, 232, 0.6));
+    border-left: 4px solid var(--accent-color);
+    border-radius: 8px;
+}
+
+.benefit-item {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+}
+
+.benefit-icon {
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.benefit-item p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.benefit-item strong {
+    color: var(--primary-color);
+}
+
+.hero-cta-text {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: rgba(44, 62, 80, 0.03);
+    border-radius: 6px;
+    text-align: justify;
+}
+
 .hero-content .btn {
     align-self: flex-start;
     margin-top: var(--spacing-md);
@@ -103,6 +150,20 @@
         text-align: left;
     }
 
+    .hero-benefits {
+        padding: var(--spacing-md);
+        gap: var(--spacing-sm);
+    }
+
+    .benefit-item p {
+        font-size: 0.9rem;
+    }
+
+    .hero-cta-text {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+
     .placeholder-image {
         max-width: 300px;
     }
@@ -117,6 +178,28 @@
         font-size: 0.95rem;
         line-height: 1.7;
         margin-bottom: var(--spacing-md);
+    }
+
+    .hero-benefits {
+        padding: var(--spacing-md);
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .benefit-item p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .benefit-icon {
+        font-size: 1rem;
+    }
+
+    .hero-cta-text {
+        font-size: 0.9rem;
+        padding: var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
+        text-align: left;
     }
 
     .placeholder-image {
