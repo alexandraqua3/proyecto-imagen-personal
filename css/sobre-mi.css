@@ -34,6 +34,56 @@
     font-weight: 600;
 }
 
+.about-mission {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    max-width: 900px;
+    margin: var(--spacing-lg) auto 0;
+    text-align: justify;
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, rgba(232, 163, 176, 0.08), rgba(245, 230, 232, 0.6));
+    border-left: 4px solid var(--accent-color);
+    border-radius: 8px;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+    max-width: 900px;
+    margin: var(--spacing-xl) auto 0;
+    padding: var(--spacing-lg);
+}
+
+.stat-item {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, var(--secondary-color), rgba(245, 230, 232, 0.8));
+    border-radius: 12px;
+    border: 2px solid var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-medium);
+}
+
+.stat-item strong {
+    display: block;
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.stat-item p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin: 0;
+    font-weight: 500;
+}
+
 /* GALERÍA DE PERFILES DESCENDENTE */
 .team-profiles {
     display: flex;
@@ -260,6 +310,30 @@
         font-size: 1rem;
     }
 
+    .about-mission {
+        font-size: 1rem;
+        padding: var(--spacing-md);
+    }
+
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+        padding: var(--spacing-md);
+        margin: var(--spacing-lg) auto 0;
+    }
+
+    .stat-item {
+        padding: var(--spacing-md);
+    }
+
+    .stat-item strong {
+        font-size: 1.8rem;
+    }
+
+    .stat-item p {
+        font-size: 0.85rem;
+    }
+
     .profile-card {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
@@ -292,6 +366,32 @@
 
     .about-description {
         font-size: 0.95rem;
+    }
+
+    .about-mission {
+        font-size: 0.9rem;
+        padding: var(--spacing-md);
+        margin: var(--spacing-md) auto 0;
+    }
+
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md);
+        margin: var(--spacing-md) auto 0;
+    }
+
+    .stat-item {
+        padding: var(--spacing-md);
+        border-radius: 8px;
+    }
+
+    .stat-item strong {
+        font-size: 1.5rem;
+    }
+
+    .stat-item p {
+        font-size: 0.8rem;
     }
 
     .profile-card {
