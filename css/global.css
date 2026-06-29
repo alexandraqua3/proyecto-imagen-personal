@@ -46,9 +46,8 @@ body {
     color: var(--text-color);
     background-color: var(--light-bg);
     overflow-x: hidden;
-    /* Compensate for fixed navbar and footer */
+    /* Compensate for fixed navbar */
     padding-top: var(--nav-height);
-    padding-bottom: var(--footer-height);
 }
 
 /* === LAYER: Background Blobs — deepest, below all content === */
@@ -149,18 +148,18 @@ header, nav, .navbar {
     padding: var(--spacing-xl) var(--spacing-md);
 }
 
-/* === LAYER: Footer — bottom fixed === */
+/* === LAYER: Footer — normal flow === */
 .footer {
-    position: fixed;
-    bottom: 0;
+    /* Restablece el posicionamiento al flujo natural del documento */
+    position: relative; 
     width: 100%;
-    z-index: 9998;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background: rgba(255, 245, 246, 0.92);
-    border-top: 1px solid var(--border-color);
-    overflow-y: auto;
-    max-height: var(--footer-height);
+    height: auto;
+    z-index: 10; /* Se sitúa en el orden secuencial del contenido */
+    
+    /* Mantiene la línea estética blanco rosa minimalista base */
+    background: rgba(255, 245, 246, 0.95);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
 }
 
 .footer-institutional-logos {
