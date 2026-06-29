@@ -42,13 +42,18 @@ body {
     overflow-x: hidden;
     position: relative;
     z-index: 0;
+
+    padding-bottom: 450px;
 }
 
 /* Base Content Layer */
 .container, .navbar, .footer {
-    position: relative;
-    z-index: 1;
-    pointer-events: auto;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9998;
+    background-color: rgba(255, 245, 246, 0.9);
+    border-top: 1px solid var(--border-color);
 }
 
 /* Translucent Gradient Blobs */
@@ -104,13 +109,19 @@ a:hover {
     color: var(--text-color);
 }
 
+header, nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999 !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 245, 246, 0.8); /* Minimalist rose base with transparency */
+}
+
 .navbar {
-    background-color: rgba(255, 245, 246, 0.9);
     border-bottom: 1px solid var(--border-color);
     padding: var(--spacing-sm) 0;
-    position: sticky;
-    top: 0;
-    backdrop-filter: blur(10px);
 }
 
 .navbar-container {
@@ -192,9 +203,12 @@ a:hover {
 }
 
 .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9998;
     background-color: rgba(255, 245, 246, 0.9);
     border-top: 1px solid var(--border-color);
-    margin-top: var(--spacing-xl);
 }
 
 .footer-institutional-logos {
