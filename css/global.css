@@ -9,22 +9,38 @@
 
 /* === VARIABLES === */
 :root {
-    --primary-color: #2D1B20;
-    --text-color: #1A1A1A;
-    --light-bg: #FFF5F6;
-    --border-color: #e2e8f0;
-    --white: #ffffff;
+    /* Paleta Pastel - Maximalismo Controlado */
+    --azul-pastel: #AFCBFF;      /* Dominante institucional (30%) */
+    --amarillo-pastel: #FFE99A;  /* Acento primario / Hover */
+    --rosado-pastel: #FFC2D9;    /* Acento secundario */
+    --verde-pastel: #B8E8C4;     /* Confirmación / Semántico */
+    --rojo-pastel: #FFB3AE;      /* Alerta / Semántico */
+    --bg-neutro: #FDFBF7;        /* Fondo base (60%) */
+    --text-neutro: #2E2E2E;      /* Texto principal */
+    --border-radius-img: 14px;  /* Consistencia de bordes */
 
-    --blob-rose: #FFD6DB;
-    --blob-mint: #D1FAE5;
-    --spark-neon: #39ff14;
-    --spark-rose: #ff66b2;
+    /* Mapeo Temático */
+    --primary-color: #1E293B;
+    --accent-color: #3B82F6;
+    --accent-light: var(--azul-pastel);
+    --accent-dark: #1D4ED8;
+    --secondary-color: var(--rosado-pastel);
+    --hover-color: var(--amarillo-pastel);
+    --text-color: var(--text-neutro);
+    --light-bg: var(--bg-neutro);
+    --border-color: #E2E8F0;
+    --white: #FFFFFF;
+
+    --blob-rose: var(--rosado-pastel);
+    --blob-mint: var(--azul-pastel);
+    --spark-neon: var(--verde-pastel);
+    --spark-rose: var(--rosado-pastel);
 
     --font-main: 'Inter', 'Segoe UI', system-ui, sans-serif;
     --font-size-base: 16px;
     --line-height-base: 1.6;
 
-    --nav-height: 75px;
+    --nav-height: 95px;
     --footer-height: 260px;
 
     --spacing-xs: 0.5rem;
@@ -111,13 +127,18 @@ header, nav, .navbar {
 }
 
 .brand-logo {
-    height: 50px;
+    height: 68px;
     object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.brand-logo:hover {
+    transform: scale(1.05);
 }
 
 .brand-divider {
     width: 2px;
-    height: 40px;
+    height: 52px;
     background-color: var(--primary-color);
 }
 

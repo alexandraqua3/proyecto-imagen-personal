@@ -43,32 +43,32 @@
 .service-card {
     background: linear-gradient(135deg, var(--secondary-color), var(--white));
     border: 2px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: var(--border-radius-img);
     padding: var(--spacing-lg);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: var(--shadow-light);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     position: relative;
     overflow: hidden;
 }
 
-/* Fondo gradiente único para cada tarjeta */
+/* Fondo gradiente pastel único para cada tarjeta */
 .service-card:nth-child(1) {
-    background: linear-gradient(135deg, #f5e6e8 0%, #ffffff 100%);
-    border-color: var(--accent-color);
+    background: linear-gradient(135deg, var(--azul-pastel) 0%, #ffffff 100%);
+    border-color: var(--azul-pastel);
 }
 
 .service-card:nth-child(2) {
-    background: linear-gradient(135deg, #f0c5d1 0%, #ffffff 100%);
-    border-color: var(--accent-dark);
+    background: linear-gradient(135deg, var(--amarillo-pastel) 0%, #ffffff 100%);
+    border-color: var(--amarillo-pastel);
 }
 
 .service-card:nth-child(3) {
-    background: linear-gradient(135deg, #d4e8f0 0%, #ffffff 100%);
-    border-color: #a8d8f0;
+    background: linear-gradient(135deg, var(--rosado-pastel) 0%, #ffffff 100%);
+    border-color: var(--rosado-pastel);
 }
 
 /* Efecto hover mejorado */
