@@ -12,6 +12,26 @@
 
 <body>
     <!-- NAVBAR -->
+    <div class="background-doodle-pattern" aria-hidden="true">
+        <svg class="bg-doodle bg-pink" width="140" height="140" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2l2.9 7.2L23 10l-5.8 4.4L18.2 22 12 17.9 5.8 22l1.9-7.6L1 10l8.1-0.8L12 2z" fill="#ff3366"/>
+        </svg>
+        <svg class="bg-doodle bg-blue" width="100" height="100" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="6" fill="#1c7ed6" opacity="0.18"/>
+        </svg>
+        <svg class="bg-doodle bg-yellow" width="90" height="90" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2l1.4 4.3h4.5l-3.6 2.6 1.4 4.3L12 10.6 8.3 13.2l1.4-4.3L6.1 6.3h4.5L12 2z" fill="#ffe600"/>
+        </svg>
+        <svg class="bg-doodle bg-purple" width="120" height="120" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="7" fill="#7048e8" opacity="0.18"/>
+        </svg>
+        <svg class="bg-doodle bg-green" width="60" height="60" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="3" fill="#20c997"/>
+        </svg>
+        <svg class="bg-doodle bg-blue-small" width="60" height="60" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="3" fill="#1c7ed6"/>
+        </svg>
+    </div>
     <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-brand logo-container">
@@ -22,7 +42,7 @@
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link" data-page="inicio">Inicio</a></li>
                 <li><a href="sobre-mi.html" class="nav-link" data-page="sobre-mi">Sobre Nosotros</a></li>
-                <li><a href="uniforme.html" class="nav-link" data-page="uniforme">Nuestro Uniforme</a></li>
+                <li><a href="uniforme.html" class="nav-link" data-page="uniforme">Nuestro uniforme</a></li>
                 <li><a href="galeria.html" class="nav-link" data-page="galeria">Galería</a></li>
                 <li><a href="contacto.html" class="nav-link" data-page="contacto">Contacto</a></li>
             </ul>
@@ -32,34 +52,234 @@
     <!-- CONTENIDO PRINCIPAL -->
     <main class="container">
         <section class="hero">
-            <div class="hero-content">
-                <h2 class="hero-title">Tu imagen habla por tí</h2>
-                <article class="article-81">
-                    <h3>Artículo 81</h3>
-                    <ul>
-                        <li><strong>Diario Hombres:</strong> Camisa blanca manga corta, pantalón azul oscuro, zapatos
-                            negros, medias oscuras.</li>
-                        <li><strong>Diario Mujeres:</strong> Jardinera a cuadros, blusa blanca manga corta, medias
-                            blancas, zapatos negros colegiales.</li>
-                        <li><strong>Gala:</strong> Uniforme de diario con saco azul oscuro institucional.</li>
-                        <li><strong>Educación Física:</strong> Sudadera institucional, camiseta blanca con logo, tenis
-                            predominantemente blancos.</li>
-                        <li><strong>Parágrafo:</strong> El uniforme debe portarse con pulcritud y decoro dentro y fuera
-                            de la institución.</li>
-                        <li><strong>Presentación Personal:</strong> Cabello limpio y organizado, accesorios discretos,
-                            uñas cortas y limpias.</li>
-                    </ul>
-                </article>
-                <div class="hero-links">
-                    <a href="https://www.iecolgesan.edu.co/" target="_blank" class="btn btn-primary">Sitio Web
-                        Oficial</a>
-                    <a href="https://www.iecolgesan.edu.co/wp-content/uploads/2022/04/Manual-Convivencia-Modificado-enero-2022-para-enviar.pdf"
-                        target="_blank" class="btn btn-secondary">Manual de Convivencia PDF</a>
-                </div>
+            <!-- BLOQUE 1: MASCOTAS + FONDO COLEGIO -->
+            <div class="hero-mascots-wrapper">
+                <img src="assets/images/background.png" alt="Fondo Colegio" class="hero-bg-img">
+                <img src="assets/images/hero-bg-colegio.png" alt="Imagen Colegio" class="hero-bg-colegio">
+                <img src="assets/images/hero-mascotas-ilustracion.png" alt="Estudiantes Representativos"
+                    class="hero-mascots-img">
+                <!-- Doodles locales del hero/card (vectorizados) -->
+                <svg class="doodle-svg" style="top:8px; right:14px;" width="26" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M12 .587l3.668 7.431L23.5 9.748l-5.75 5.6L19.335 23 12 19.56 4.665 23l1.584-7.652L.5 9.748l7.832-1.73z" fill="#ff3366"/>
+                </svg>
             </div>
-            <div class="hero-gallery">
-                <img src="assets/images/equipo de trabajo.jpeg" alt="Equipo de Trabajo SENA" class="hero-gallery-img">
-                <img src="assets/images/pendejitos.jpeg" alt="Estudiantes Proyecto IE General Santander" class="hero-gallery-img">
+
+            <!-- BLOQUE 2: MENSAJE CENTRAL Y CTA -->
+            <div class="hero-content">
+                <h1 class="hero-main-title">TU IMAGEN<br><span class="highlight-pink">HABLA POR TI</span></h1>
+                <div class="hero-badge">TU PRESENTACIÓN REFLEJA TUS VALORES</div>
+                <p class="hero-description">Respeto, disciplina y orgullo de pertenecer a nuestra institución.</p>
+                <a href="sobre-mi.html" class="btn btn-primary-hero">CONOCE MÁS SOBRE NUESTRO PROYECTO &rarr;</a>
+            </div>
+
+            <!-- BLOQUE 3: TARJETA POST-IT (POR QUÉ ES IMPORTANTE) -->
+            <aside class="hero-card-postit">
+                <div class="postit-tape"></div>
+                <h3>¿POR QUÉ ES IMPORTANTE?</h3>
+                <ul class="postit-list">
+                    <li>
+                        <span class="badge-icon bg-heart">♥</span>
+                        <p>Refleja nuestros valores y respeto hacia los demás.</p>
+                    </li>
+                    <li>
+                        <span class="badge-icon bg-shield">✓</span>
+                        <p>Fomenta la disciplina y el cumplimiento de normas.</p>
+                    </li>
+                    <li>
+                        <span class="badge-icon bg-people">👥</span>
+                        <p>Mejora nuestra convivencia escolar.</p>
+                    </li>
+                    <li>
+                        <span class="badge-icon bg-star">★</span>
+                        <p>Fortalece el sentido de pertenencia y orgullo institucional.</p>
+                    </li>
+                </ul>
+            </aside>
+        </section>
+
+        <section class="explore-section">
+            <div class="title-wrapper">
+                <h2 class="explore-title">
+                    <svg width="22" height="22" viewBox="0 0 24 24" class="explore-star-left" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 .587l3.668 7.431L23.5 9.748l-5.75 5.6L19.335 23 12 19.56 4.665 23l1.584-7.652L.5 9.748l7.832-1.73z" fill="#ff3366"/>
+                    </svg>
+                    EXPLORA NUESTRO PROYECTO
+                    <svg width="20" height="20" viewBox="0 0 24 24" class="explore-star-right" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="none" stroke="#1c7ed6" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+                    </svg>
+                </h2>
+            </div>
+
+            <div class="explore-grid-4">
+                <article class="explore-card card-pink">
+                    <div class="card-icon"><img src="assets/images/icono-diario.png" alt="Uniforme de Diario"></div>
+                    <div class="card-body">
+                        <h3>UNIFORME DE DIARIO</h3>
+                        <p>Conoce cómo usarlo correctamente.</p>
+                        <a href="uniforme.html#diario" class="btn-card btn-pink">Ver más &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="explore-card card-blue">
+                    <div class="card-icon"><img src="assets/images/icono-deporte.png" alt="Uniforme de Educación Física"></div>
+                    <div class="card-body">
+                        <h3>UNIFORME DE EDUCACIÓN FÍSICA</h3>
+                        <p>Presentación adecuada para las actividades deportivas.</p>
+                        <a href="uniforme.html#deporte" class="btn-card btn-blue">Ver más &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="explore-card card-yellow">
+                    <div class="card-icon"><img src="assets/images/icono-presentacion.png" alt="Presentación Personal"></div>
+                    <div class="card-body">
+                        <h3>PRESENTACIÓN PERSONAL</h3>
+                        <p>Cabello, uñas, accesorios e higiene personal.</p>
+                        <a href="uniforme.html#presentacion" class="btn-card btn-yellow">Ver más &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="explore-card card-purple">
+                    <div class="card-icon"><img src="assets/images/icono-sabiasque.png" alt="¿Sabías Qué?"></div>
+                    <div class="card-body">
+                        <h3>¿SABÍAS QUÉ?</h3>
+                        <p>Datos curiosos sobre la imagen personal.</p>
+                        <a href="sobre-mi.html#datos" class="btn-card btn-purple">Ver más &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="interactive-middle-section">
+            <div class="middle-grid">
+                <article class="notebook-card">
+                    <div class="notebook-spiral"></div>
+                    <div class="notebook-content">
+                        <h3>¿USAS BIEN EL UNIFORME?</h3>
+                        <p class="subtitle-hand">¡Acepta el reto y demuestra tu estilo escolar!</p>
+                        <div class="comparison-box">
+                            <div class="comp-item correct">
+                                <div class="comp-placeholder"><span>Correcto</span></div>
+                                <span class="check-badge">✓</span>
+                            </div>
+                            <div class="comp-item incorrect">
+                                <div class="comp-placeholder"><span>Incorrecto</span></div>
+                                <span class="cross-badge">✕</span>
+                            </div>
+                        </div>
+                        <a href="#juego" class="btn-notebook">¡JUGAR AHORA! 🎮</a>
+                    </div>
+                </article>
+
+                <div class="media-quad-grid">
+                    <div class="media-card card-v1">
+                        <div class="play-overlay">▶</div>
+                        <span>¿CÓMO USAR EL UNIFORME?</span>
+                    </div>
+                    <div class="media-card card-v2">
+                        <div class="play-overlay">▶</div>
+                        <span>CUIDADO DEL CABELLO</span>
+                    </div>
+                    <div class="media-card card-v3">
+                        <div class="play-overlay">▶</div>
+                        <span>ACCESORIOS PERMITIDOS</span>
+                    </div>
+                    <div class="media-card card-v4">
+                        <div class="play-overlay">▶</div>
+                        <span>HIGIENE Y PRESENTACIÓN</span>
+                    </div>
+                </div>
+
+                <aside class="side-notes">
+                    <div class="note-paper yellow-note">
+                        <p>La buena presentación abre puertas y demuestra autorrespeto. 💫</p>
+                    </div>
+                    <div class="note-paper blue-note">
+                        <p>¿Tienes dudas sobre el manual? Visita la sección de Preguntas. 📌</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="gallery-header">
+                <h2>GALERÍA DE MOMENTOS 📷</h2>
+            </div>
+            <div class="gallery-slider-wrapper">
+                <button class="slider-btn prev-btn">‹</button>
+                <div class="gallery-grid-5">
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder"><span>[ Imagen ]</span></div>
+                        <div class="gallery-tag">Uniforme de diario</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder"><span>[ Imagen ]</span></div>
+                        <div class="gallery-tag">Educación física</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder"><span>[ Imagen ]</span></div>
+                        <div class="gallery-tag">Entrevistas</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder"><span>[ Imagen ]</span></div>
+                        <div class="gallery-tag">Actividades</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder"><span>[ Imagen ]</span></div>
+                        <div class="gallery-tag">Eventos especiales</div>
+                    </div>
+                </div>
+                <button class="slider-btn next-btn">›</button>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            </div>
+        </section>
+
+            <div class="title-wrapper">
+                <h2 class="explore-title">
+                    <svg width="22" height="22" viewBox="0 0 24 24" class="explore-star-left" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 .587l3.668 7.431L23.5 9.748l-5.75 5.6L19.335 23 12 19.56 4.665 23l1.584-7.652L.5 9.748l7.832-1.73z" fill="#ff3366"/>
+                    </svg>
+                    INTERACTÚA CON NOSOTROS
+                    <svg width="20" height="20" viewBox="0 0 24 24" class="explore-star-right" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="none" stroke="#1c7ed6" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+                    </svg>
+                </h2>
+            </div>
+
+        <section class="interactive-section">
+            <div class="interactive-grid">
+                <article class="interactive-card card-reto">
+                    <div class="card-icon">🏆</div>
+                    <h3>Reto del Mes</h3>
+                    <p>Participa en el desafío de imagen personal y gana reconocimiento para tu grupo.</p>
+                    <a href="#participar" class="btn-interactive btn-reto">PARTICIPAR AHORA →</a>
+                    <img src="assets/images/reto.png" alt="Reto del Mes" class="polaroid-image">
+                </article>
+
+                <article class="interactive-card card-survey">
+                    <div class="card-icon">📊</div>
+                    <h3>Encuesta Rápida</h3>
+                    <p>Comparte tu opinión sobre el uniforme y la presentación personal.</p>
+                    <div class="survey-list">
+                        <label class="survey-option"><input type="radio" name="survey" value="uniforme" checked><span>Uniforme ideal</span></label>
+                        <label class="survey-option"><input type="radio" name="survey" value="presentacion"><span>Presentación personal</span></label>
+                        <label class="survey-option"><input type="radio" name="survey" value="impacto"><span>Impacto institucional</span></label>
+                    </div>
+                    <a href="#" class="btn-interactive btn-votar">VOTAR ✓</a>
+                </article>
+
+                <article class="interactive-card card-impact">
+                    <div class="card-icon">✨</div>
+                    <h3>Nuestro Impacto</h3>
+                    <p>Resultados del proyecto que reflejan cambios positivos en la comunidad escolar.</p>
+                    <div class="impact-grid">
+                        <div class="impact-metric"><strong>+50</strong><small>Estudiantes</small></div>
+                        <div class="impact-metric"><strong>12</strong><small>Videos</small></div>
+                        <div class="impact-metric"><strong>35+</strong><small>Evidencias</small></div>
+                        <div class="impact-metric"><strong>1</strong><small>Gran Objetivo</small></div>
+                    </div>
+                </article>
             </div>
         </section>
     </main>
