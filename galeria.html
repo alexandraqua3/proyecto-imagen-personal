@@ -5,7 +5,8 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería</title>
+    <title>Galería — Tu Imagen Habla Por Ti | I.E. General Santander</title>
+    <meta name="description" content="Galería de momentos que representan la imagen personal, actividades escolares y eventos especiales de la I.E. General Santander.">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/galeria.css">
 </head>
@@ -31,9 +32,276 @@
 
     <!-- CONTENIDO PRINCIPAL -->
     <main class="container">
-        <section id="galeria"></section>
 
-        <!-- SECCIÓN CTA -->
+        <!--
+        ════════════════════════════════════════════════════════════════
+        CÓMO AÑADIR UNA FOTO O VIDEO NUEVO A LA GALERÍA
+        ════════════════════════════════════════════════════════════════
+
+        1. Copia el bloque <figure> de abajo y pégalo dentro de
+           <div class="polaroid-grid"> donde quieras que aparezca.
+
+        2. Cambia data-category a uno de estos valores exactos:
+              uniforme-diario | ed-fisica | actividades | eventos
+
+        3. Reemplaza el src de <img> con la ruta a tu foto real
+           (guarda las fotos en assets/images/galeria/ en minúsculas
+            sin tildes ni espacios, por ejemplo: foto-grupo-01.jpg)
+
+        4. Pon un alt descriptivo en la imagen.
+
+        5. Cambia el texto de <figcaption> por el caption que quieras.
+
+        6. Para VIDEOS: añade <span class="play-overlay">▶</span>
+           dentro de <div class="polaroid-media"> y reemplaza <img>
+           por una imagen de miniatura (thumbnail) del video.
+
+        7. Elige un doodle decorativo (son opcionales, bórralos si no
+           quieres decoración):
+              <span class="polaroid-doodle pin">📌</span>         → pin esquina superior derecha
+              <span class="polaroid-doodle corazon">❤️</span>    → corazón esquina inferior izquierda
+              <span class="polaroid-doodle estrella">⭐</span>    → estrella esquina inferior derecha
+              <div class="polaroid-doodle washi"></div>           → cinta rosa
+              <div class="polaroid-doodle washi-azul"></div>      → cinta azul
+              <div class="polaroid-doodle washi-amarillo"></div>  → cinta amarilla
+
+        MOLDE / PLANTILLA DE TARJETA:
+        ──────────────────────────────
+        <figure class="polaroid" data-category="uniforme-diario">
+          <div class="polaroid-doodle washi"></div>
+          <div class="polaroid-media">
+            <img src="assets/images/galeria/mi-foto.jpg"
+                 alt="Descripción de la foto" loading="lazy">
+            <!-- si es video, añade aquí: <span class="play-overlay">▶</span> -->
+          </div>
+          <figcaption>Mi Caption Aquí</figcaption>
+        </figure>
+        ════════════════════════════════════════════════════════════════
+        -->
+
+        <!--
+            ══════════════════════════════════════════════════════
+            ESTRUCTURA DEL FILTRO CSS-ONLY
+            Los <input type="radio"> DEBEN ir ANTES de
+            .galeria-filtros y .polaroid-grid dentro del mismo
+            contenedor padre para que el selector ~ funcione.
+            ══════════════════════════════════════════════════════
+        -->
+        <section id="galeria">
+
+            <!-- RADIO BUTTONS OCULTOS — no mover de aquí -->
+            <input class="filtro-radio" type="radio" name="filtro" id="filtro-todas" checked>
+            <input class="filtro-radio" type="radio" name="filtro" id="filtro-uniforme">
+            <input class="filtro-radio" type="radio" name="filtro" id="filtro-fisica">
+            <input class="filtro-radio" type="radio" name="filtro" id="filtro-actividades">
+            <input class="filtro-radio" type="radio" name="filtro" id="filtro-eventos">
+
+            <!-- 1. ENCABEZADO DE SECCIÓN -->
+            <div class="galeria-header">
+                <div class="galeria-header-left">
+                    <div class="galeria-title-row">
+                        <!-- Ícono de cámara SVG inline -->
+                        <svg class="galeria-camara-icon" viewBox="0 0 80 68" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect x="4" y="20" width="72" height="44" rx="10" fill="#c084fc"/>
+                            <rect x="8" y="24" width="64" height="36" rx="8" fill="#e9d5ff"/>
+                            <circle cx="40" cy="42" r="14" fill="#7c3aed"/>
+                            <circle cx="40" cy="42" r="9"  fill="#ddd6fe"/>
+                            <circle cx="40" cy="42" r="5"  fill="#7c3aed"/>
+                            <path d="M28 20 L32 10 h16 l4 10" fill="#a855f7"/>
+                            <rect x="58" y="28" width="10" height="6" rx="3" fill="#fbbf24"/>
+                            <circle cx="18" cy="30" r="3" fill="#f9a8d4"/>
+                        </svg>
+                        <h1 class="galeria-titulo">Galería</h1>
+                    </div>
+
+                    <p class="galeria-subtitulo" aria-label="Subtítulo de la sección">
+                        <!-- Corazón pequeño -->
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#db2777" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                        Momentos que nos representan
+                    </p>
+
+                    <p class="galeria-descripcion">
+                        Aquí encontrarás <span class="accent-morado">momentos especiales</span> de nuestra institución,
+                        de nuestras actividades y de cómo vivimos con <span class="accent-rosa">orgullo</span>
+                        nuestra imagen personal.
+                    </p>
+                </div>
+
+                <!-- 2. POST-IT de categorías -->
+                <aside class="galeria-postit" aria-label="Categorías de la galería">
+                    <p class="galeria-postit-title">Categorías</p>
+                    <ul class="galeria-postit-lista">
+                        <li>
+                            <span class="postit-badge amarillo" aria-hidden="true">⭐</span>
+                            Actividades escolares
+                        </li>
+                        <li>
+                            <span class="postit-badge rosa" aria-hidden="true">❤️</span>
+                            Eventos especiales
+                        </li>
+                        <li>
+                            <span class="postit-badge morado" aria-hidden="true">👤</span>
+                            Presentación personal
+                        </li>
+                        <li>
+                            <span class="postit-badge azul" aria-hidden="true">🏆</span>
+                            Trabajo en equipo
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+
+            <!-- 3. BARRA DE FILTROS -->
+            <nav class="galeria-filtros" aria-label="Filtros de la galería">
+                <label class="filtro-label filtro-label-todas"      for="filtro-todas">TODAS</label>
+                <label class="filtro-label filtro-label-uniforme"   for="filtro-uniforme">UNIFORME DIARIO</label>
+                <label class="filtro-label filtro-label-fisica"     for="filtro-fisica">ED. FÍSICA</label>
+                <label class="filtro-label filtro-label-actividades" for="filtro-actividades">ACTIVIDADES</label>
+                <label class="filtro-label filtro-label-eventos"    for="filtro-eventos">EVENTOS</label>
+            </nav>
+
+            <!-- 4. GRID POLAROID  ─────────────────────────────────────
+                 PLACEHOLDER: 9 tarjetas de muestra usando imágenes ya
+                 disponibles en assets/images/. Reemplaza src y alt con
+                 las fotos reales cuando las tengas.
+                 ──────────────────────────────────────────────────────── -->
+            <div class="polaroid-grid">
+
+                <!-- TARJETA 1 -->
+                <figure class="polaroid" data-category="uniforme-diario">
+                    <div class="polaroid-doodle washi"></div>
+                    <div class="polaroid-media">
+                        <img src="assets/images/equipo de trabajo.jpeg"
+                             alt="Estudiantes con uniforme diario del colegio" loading="lazy">
+                    </div>
+                    <figcaption>¡Orgullo Colgesan!</figcaption>
+                </figure>
+
+                <!-- TARJETA 2 -->
+                <figure class="polaroid" data-category="uniforme-diario">
+                    <span class="polaroid-doodle pin" aria-hidden="true">📌</span>
+                    <div class="polaroid-media">
+                        <img src="assets/images/Stefany Martínez.jpeg"
+                             alt="Presentación personal con uniforme diario" loading="lazy">
+                    </div>
+                    <figcaption>Siempre Presentables</figcaption>
+                </figure>
+
+                <!-- TARJETA 3 -->
+                <figure class="polaroid" data-category="actividades">
+                    <span class="polaroid-doodle estrella" aria-hidden="true">⭐</span>
+                    <div class="polaroid-media">
+                        <img src="assets/images/Valery Sierra.jpeg"
+                             alt="Actividad escolar de imagen personal" loading="lazy">
+                    </div>
+                    <figcaption>Amistad y Respeto</figcaption>
+                </figure>
+
+                <!-- TARJETA 4 -->
+                <figure class="polaroid" data-category="actividades">
+                    <div class="polaroid-doodle washi-azul"></div>
+                    <div class="polaroid-media">
+                        <img src="assets/images/Adriana Morales.jpeg"
+                             alt="Participación en actividades escolares" loading="lazy">
+                    </div>
+                    <figcaption>Proyectamos Confianza</figcaption>
+                </figure>
+
+                <!-- TARJETA 5 (VIDEO de ejemplo) -->
+                <figure class="polaroid" data-category="eventos">
+                    <span class="polaroid-doodle corazon" aria-hidden="true">❤️</span>
+                    <div class="polaroid-media">
+                        <img src="assets/images/hero-bg-colegio.png"
+                             alt="Video del evento especial institucional" loading="lazy">
+                        <!-- Ícono de play: indica que es un video -->
+                        <span class="play-overlay" aria-label="Reproducir video">▶</span>
+                    </div>
+                    <figcaption>Equipo que Inspira</figcaption>
+                </figure>
+
+                <!-- TARJETA 6 -->
+                <figure class="polaroid" data-category="ed-fisica">
+                    <div class="polaroid-doodle washi-amarillo"></div>
+                    <div class="polaroid-media">
+                        <img src="assets/images/Daniel Castro.jpeg"
+                             alt="Uniforme de educación física" loading="lazy">
+                    </div>
+                    <figcaption>Fuerza y Disciplina</figcaption>
+                </figure>
+
+                <!-- TARJETA 7 -->
+                <figure class="polaroid" data-category="uniforme-diario">
+                    <span class="polaroid-doodle pin" aria-hidden="true">📌</span>
+                    <div class="polaroid-media">
+                        <!-- Placeholder gris mientras no llega la foto real -->
+                        <div class="polaroid-placeholder">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="white" opacity="0.6"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zm-10.5-4.5l2.5 3.01L16.5 12l4.5 6H3l3.5-4.5z"/></svg>
+                            Foto próximamente
+                        </div>
+                    </div>
+                    <figcaption>Listos para el Reto</figcaption>
+                </figure>
+
+                <!-- TARJETA 8 -->
+                <figure class="polaroid" data-category="eventos">
+                    <div class="polaroid-doodle washi"></div>
+                    <div class="polaroid-media">
+                        <div class="polaroid-placeholder">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="white" opacity="0.6"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zm-10.5-4.5l2.5 3.01L16.5 12l4.5 6H3l3.5-4.5z"/></svg>
+                            Foto próximamente
+                        </div>
+                    </div>
+                    <figcaption>Evento Especial</figcaption>
+                </figure>
+
+                <!-- TARJETA 9 -->
+                <figure class="polaroid" data-category="actividades">
+                    <span class="polaroid-doodle estrella" aria-hidden="true">⭐</span>
+                    <div class="polaroid-media">
+                        <div class="polaroid-placeholder">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="white" opacity="0.6"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zm-10.5-4.5l2.5 3.01L16.5 12l4.5 6H3l3.5-4.5z"/></svg>
+                            Foto próximamente
+                        </div>
+                    </div>
+                    <figcaption>Trabajo en Equipo</figcaption>
+                </figure>
+
+            </div>
+            <!-- FIN polaroid-grid ────────────────────────────────────── -->
+
+            <!-- 5. CITA DESTACADA -->
+            <blockquote class="galeria-quote">
+                <span class="galeria-quote-marks" aria-hidden="true">"</span>
+                <p class="galeria-quote-text">
+                    Cada foto cuenta una historia,<br>
+                    cada historia refleja <span class="accent-rosa">quiénes somos.</span>
+                </p>
+                <!-- Ícono de cámara pequeño a la derecha -->
+                <svg class="galeria-quote-camara" width="64" height="54" viewBox="0 0 80 68" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="4" y="20" width="72" height="44" rx="10" fill="#c084fc" opacity=".7"/>
+                    <circle cx="40" cy="42" r="14" fill="#7c3aed" opacity=".8"/>
+                    <circle cx="40" cy="42" r="9"  fill="#ddd6fe"/>
+                    <path d="M28 20 L32 10 h16 l4 10" fill="#a855f7" opacity=".7"/>
+                    <rect x="58" y="28" width="10" height="6" rx="3" fill="#fbbf24"/>
+                </svg>
+            </blockquote>
+
+            <!-- 6. BOTÓN VER MÁS (extiende .btn de global.css) -->
+            <div class="galeria-cta">
+                <a href="#galeria" class="btn btn-galeria-mas" aria-label="Ver más fotos de la galería">
+                    <!-- Ícono cámara pequeño -->
+                    <svg width="18" height="18" viewBox="0 0 80 68" fill="none" aria-hidden="true">
+                        <rect x="4" y="20" width="72" height="44" rx="10" fill="#1e293b"/>
+                        <circle cx="40" cy="42" r="14" fill="#1e293b"/>
+                        <circle cx="40" cy="42" r="9"  fill="#94a3b8"/>
+                        <path d="M28 20 L32 10 h16 l4 10" fill="#1e293b"/>
+                        <rect x="58" y="28" width="10" height="6" rx="3" fill="#1e293b"/>
+                    </svg>
+                    VER MÁS FOTOS
+                </a>
+            </div>
+
+        </section>
 
     </main>
 
