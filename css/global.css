@@ -169,6 +169,29 @@ header, nav, .navbar {
     padding: var(--spacing-xl) var(--spacing-md);
 }
 
+.background-doodle-pattern {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background-doodle-pattern svg {
+    position: absolute;
+    opacity: 0.22;
+    filter: blur(0.5px);
+}
+
+.bg-doodle {
+    width: 140px;
+    height: 140px;
+}
+
+.bg-doodle.circle {
+    border-radius: 999px;
+}
+
 /* === LAYER: Footer — normal flow === */
 .footer {
     /* Restablece el posicionamiento al flujo natural del documento */
