@@ -275,7 +275,8 @@
     border-radius: 2px;
 }
 
-.polaroid-media img {
+.polaroid-media img,
+.polaroid-media video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -748,4 +749,29 @@
     .cta-content h2 {
         font-size: 1.25rem;
     }
+}
+
+/* -------------------------------------------------------
+   12. SEPARACIÓN VIDEOS / FOTOGRAFÍAS
+   ------------------------------------------------------- */
+.galeria-subseccion-titulo {
+    font-family: 'Caveat', 'Comic Sans MS', cursive;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    margin: var(--spacing-lg) 0 1.2rem;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 260px));
+    justify-content: center;
+    gap: 2.4rem 2rem;
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Modificador de aspecto vertical 9:16 para videos — sobrescribe el 4:3 base */
+.polaroid-media.aspecto-9-16 {
+    aspect-ratio: 9 / 16;
 }
