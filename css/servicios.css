@@ -467,3 +467,143 @@ body {
         margin-inline: 0;
     }
 }
+
+/* =========================================
+   UNIFORME - Rediseño Modular de 3 Columnas
+   Guía descriptiva por uniforme + imágenes
+   ========================================= */
+
+/* Grid de 3 columnas con alineación superior para que cada tarjeta
+   crezca según su propio contenido (la central es más larga) */
+.uniforme-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    align-items: start;
+    margin-bottom: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+/* Tarjeta de uniforme: columna vertical, contenido alineado a la izquierda */
+.uniforme-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+    padding: var(--spacing-lg);
+    height: 100%;
+}
+
+/* Icono centrado en la parte superior */
+.uniforme-card .service-icon {
+    align-self: center;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Título centrado */
+.uniforme-card > h3 {
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Tagline centrado */
+.uniforme-card .service-tagline {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    flex-grow: 0;
+}
+
+/* Intro justificada */
+.uniforme-card .service-intro {
+    text-align: justify;
+    margin-bottom: var(--spacing-md);
+    flex-grow: 0;
+}
+
+/* Bloque descriptivo (Damas / Caballeros) */
+.uniforme-bloque {
+    background: rgba(255, 255, 255, 0.6);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 6px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    text-align: left;
+}
+
+.uniforme-bloque h4 {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+}
+
+.uniforme-bloque ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.uniforme-bloque li {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    padding: 4px 0;
+    line-height: 1.6;
+}
+
+.uniforme-bloque li strong {
+    color: var(--primary-color);
+}
+
+/* Imagen del uniforme dentro de la tarjeta */
+.uniforme-imagen {
+    margin: var(--spacing-sm) 0 0 0;
+    background: var(--white);
+    border-radius: var(--border-radius-img);
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 2px solid var(--border-color);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.uniforme-imagen img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    background: #f9f5f5;
+}
+
+.uniforme-imagen figcaption {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.uniforme-imagen:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-heavy);
+    border-color: var(--accent-color);
+}
+
+/* Infografía larga (vertical) en la columna central de gala */
+.infografia-larga img {
+    aspect-ratio: 2 / 3;
+}
+
+/* RESPONSIVE UNIFORME */
+@media (max-width: 900px) {
+    .uniforme-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .uniforme-card {
+        padding: var(--spacing-md);
+    }
+}

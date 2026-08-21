@@ -90,4 +90,45 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // FAQ Accordion (página Preguntas Frecuentes)
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (faqItems.length) {
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            if (!question || !answer) return;
+
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                // Cierra los demás ítems (acordeón exclusivo)
+                faqItems.forEach(other => {
+                    if (other !== item) {
+                        other.classList.remove('active');
+                        other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                        other.querySelector('.faq-answer').style.maxHeight = null;
+                    }
+                });
+
+                if (isActive) {
+                    item.classList.remove('active');
+                    question.setAttribute('aria-expanded', 'false');
+                    answer.style.maxHeight = null;
+                } else {
+                    item.classList.add('active');
+                    question.setAttribute('aria-expanded', 'true');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
+
+        // Abre la primera pregunta por defecto
+        const firstItem = faqItems[0];
+        firstItem.classList.add('active');
+        firstItem.querySelector('.faq-question').setAttribute('aria-expanded', 'true');
+        firstItem.querySelector('.faq-answer').style.maxHeight = firstItem.querySelector('.faq-answer').scrollHeight + 'px';
+    }
 });
+
+

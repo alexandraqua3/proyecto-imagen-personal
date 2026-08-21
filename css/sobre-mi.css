@@ -223,6 +223,55 @@ body {
     .banner-main { padding: 28px; }
 }
 
+/* =========================================
+   RESPONSIVE MÓVIL (sin afectar escritorio)
+   ========================================= */
+@media (max-width: 768px) {
+    .banner-title {
+        font-size: clamp(2.2rem, 8vw, 3rem);
+    }
+
+    .banner-main {
+        padding: 22px 18px;
+        width: 100%;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .team-photo-container {
+        flex: initial;
+        width: 100%;
+        max-width: 320px;
+        height: 200px;
+    }
+
+    /* Las notas laterales absolutas se ocultan en móvil para evitar desbordes */
+    .side-note {
+        display: none;
+    }
+
+    .card {
+        min-height: auto;
+        padding: 22px 16px 26px;
+    }
+
+    .portrait {
+        width: 130px;
+        height: 130px;
+    }
+
+    .name {
+        font-size: 1.6rem;
+    }
+
+    .subtitle {
+        font-size: 0.78rem;
+    }
+}
+
 .card {
     background: linear-gradient(180deg,#fff,#fff8ff);
     border-radius: 30px;

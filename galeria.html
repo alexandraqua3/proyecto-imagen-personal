@@ -19,14 +19,16 @@
             <div class="navbar-brand logo-container">
                 <img src="assets/images/escudo.jpg" alt="Escudo" class="brand-logo">
                 <div class="brand-divider"></div>
-                <img src="assets/images/IE_general_santander.png" alt="IE General Santander" class="brand-logo">
+                <a href="https://www.iecolgesan.edu.co/" target="_blank" rel="noopener noreferrer" aria-label="Ir al sitio de la IE General Santander">
+                    <img src="assets/images/IE_general_santander.png" alt="IE General Santander" class="brand-logo">
+                </a>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link" data-page="inicio">Inicio</a></li>
                 <li><a href="sobre-mi.html" class="nav-link" data-page="sobre-mi">Sobre Nosotros</a></li>
                 <li><a href="uniforme.html" class="nav-link" data-page="uniforme">Nuestro Uniforme</a></li>
                 <li><a href="galeria.html" class="nav-link" data-page="galeria">Galería</a></li>
-                <li><a href="contacto.html" class="nav-link" data-page="contacto">Contacto</a></li>
+                <li><a href="contacto.html" class="nav-link" data-page="contacto">Preguntas Frecuentes</a></li>
             </ul>
         </div>
     </nav>
@@ -129,6 +131,15 @@
                     </p>
                 </div>
 
+                <!-- CITA DECORATIVA SUPERIOR -->
+                <div class="galeria-header-quote-card">
+                    <span class="quote-card-pin" aria-hidden="true">📌</span>
+                    <p class="quote-card-text">
+                        "La presentación personal es la primera conversación que tienes con el mundo. Viste tu uniforme con orgullo."
+                    </p>
+                    <div class="quote-card-signature">— Estilo & Esencia</div>
+                </div>
+
                 <!-- 2. POST-IT de categorías -->
                 <aside class="galeria-postit" aria-label="Categorías de la galería">
                     <p class="galeria-postit-title">Categorías</p>
@@ -224,113 +235,78 @@
                  disponibles en assets/images/. Reemplaza src y alt con
                  las fotos reales cuando las tengas.
                  ──────────────────────────────────────────────────────── -->
-            <div class="polaroid-grid">
+            <div class="polaroid-grid" style="display: grid; grid-template-columns: repeat(4, 1fr);">
 
                 <!-- TARJETA 1 -->
                 <figure class="polaroid" data-category="uniforme-diario">
                     <div class="polaroid-doodle washi"></div>
-                    <div class="polaroid-media">
-                        <img src="assets/images/equipo de trabajo.jpeg"
-                            alt="Estudiantes con uniforme diario del colegio" loading="lazy">
+                    <div class="polaroid-media" style="aspect-ratio: 9 / 16;">
+                        <img src="assets/images/Uniforme completo.jpeg" alt="Uniforme completo" loading="lazy">
                     </div>
-                    <figcaption>¡Orgullo Colgesan!</figcaption>
+                    <figcaption>Uniforme completo</figcaption>
                 </figure>
 
                 <!-- TARJETA 2 -->
-                <figure class="polaroid" data-category="uniforme-diario">
+                <figure class="polaroid" data-category="actividades">
                     <span class="polaroid-doodle pin" aria-hidden="true">📌</span>
-                    <div class="polaroid-media">
-                        <img src="assets/images/Stefany Martínez.jpeg" alt="Presentación personal con uniforme diario"
-                            loading="lazy">
+                    <div class="polaroid-media" style="aspect-ratio: 9 / 16;">
+                        <img src="assets/images/Equipo de trabajo.jpeg" alt="Equipo de trabajo" loading="lazy">
                     </div>
-                    <figcaption>Siempre Presentables</figcaption>
+                    <figcaption>Equipo de trabajo</figcaption>
                 </figure>
 
                 <!-- TARJETA 3 -->
-                <figure class="polaroid" data-category="actividades">
+                <figure class="polaroid" data-category="uniforme-diario">
                     <span class="polaroid-doodle estrella" aria-hidden="true">⭐</span>
-                    <div class="polaroid-media">
-                        <img src="assets/images/Valery Sierra.jpeg" alt="Actividad escolar de imagen personal"
-                            loading="lazy">
+                    <div class="polaroid-media" style="aspect-ratio: 9 / 16;">
+                        <img src="assets/videos/UNIFORME DIARIO FEMENINO.jpeg" alt="Uniforme diario femenino" loading="lazy">
                     </div>
-                    <figcaption>Amistad y Respeto</figcaption>
+                    <figcaption>Uniforme Diario Femenino</figcaption>
                 </figure>
 
                 <!-- TARJETA 4 -->
-                <figure class="polaroid" data-category="actividades">
+                <figure class="polaroid" data-category="ed-fisica">
                     <div class="polaroid-doodle washi-azul"></div>
-                    <div class="polaroid-media">
-                        <img src="assets/images/Adriana Morales.jpeg" alt="Participación en actividades escolares"
-                            loading="lazy">
+                    <div class="polaroid-media" style="aspect-ratio: 9 / 16;">
+                        <img src="assets/videos/UNIFORME FISICA.jpeg" alt="Uniforme física" loading="lazy">
                     </div>
-                    <figcaption>Proyectamos Confianza</figcaption>
+                    <figcaption>Uniforme de Educación Física</figcaption>
                 </figure>
 
-                <!-- TARJETA 5 (VIDEO de ejemplo) -->
-                <figure class="polaroid" data-category="eventos">
+                <!-- TARJETA 5 -->
+                <figure class="polaroid" data-category="uniforme-diario">
                     <span class="polaroid-doodle corazon" aria-hidden="true">❤️</span>
-                    <div class="polaroid-media">
-                        <img src="assets/images/hero-bg-colegio.png" alt="Video del evento especial institucional"
-                            loading="lazy">
-                        <!-- Ícono de play: indica que es un video -->
-                        <span class="play-overlay" aria-label="Reproducir video">▶</span>
+                    <div class="polaroid-media" style="aspect-ratio: 9 / 16;">
+                        <img src="assets/videos/diario hombre.png" alt="Uniforme diario de hombre" loading="lazy">
                     </div>
-                    <figcaption>Equipo que Inspira</figcaption>
+                    <figcaption>Uniforme Diario — Hombre</figcaption>
                 </figure>
 
                 <!-- TARJETA 6 -->
-                <figure class="polaroid" data-category="ed-fisica">
+                <figure class="polaroid" data-category="uniforme-diario">
                     <div class="polaroid-doodle washi-amarillo"></div>
-                    <div class="polaroid-media">
-                        <img src="assets/images/Daniel Castro.jpeg" alt="Uniforme de educación física" loading="lazy">
+                    <div class="polaroid-media" style="aspect-ratio: 9 / 16;">
+                        <img src="assets/videos/DIARIO DEF.jpeg" alt="Uniforme diario definitivo" loading="lazy">
                     </div>
-                    <figcaption>Fuerza y Disciplina</figcaption>
+                    <figcaption>Uniforme de Diario Oficial</figcaption>
                 </figure>
 
                 <!-- TARJETA 7 -->
-                <figure class="polaroid" data-category="uniforme-diario">
+                <figure class="polaroid" data-category="eventos">
                     <span class="polaroid-doodle pin" aria-hidden="true">📌</span>
-                    <div class="polaroid-media">
-                        <!-- Placeholder gris mientras no llega la foto real -->
-                        <div class="polaroid-placeholder">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="white" opacity="0.6">
-                                <path
-                                    d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zm-10.5-4.5l2.5 3.01L16.5 12l4.5 6H3l3.5-4.5z" />
-                            </svg>
-                            Foto próximamente
-                        </div>
+                    <div class="polaroid-media" style="aspect-ratio: 9 / 16;">
+                        <img src="assets/images/hero-bg-colegio.png" alt="Hero background colegio" loading="lazy">
                     </div>
-                    <figcaption>Listos para el Reto</figcaption>
+                    <figcaption>I.E. General Santander</figcaption>
                 </figure>
 
                 <!-- TARJETA 8 -->
-                <figure class="polaroid" data-category="eventos">
+                <figure class="polaroid" data-category="ed-fisica">
                     <div class="polaroid-doodle washi"></div>
-                    <div class="polaroid-media">
-                        <div class="polaroid-placeholder">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="white" opacity="0.6">
-                                <path
-                                    d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zm-10.5-4.5l2.5 3.01L16.5 12l4.5 6H3l3.5-4.5z" />
-                            </svg>
-                            Foto próximamente
-                        </div>
+                    <div class="polaroid-media" style="aspect-ratio: 9 / 16;">
+                        <img src="assets/videos/FISICA HOMBRE.jpeg" alt="Uniforme física hombre" loading="lazy">
                     </div>
-                    <figcaption>Evento Especial</figcaption>
-                </figure>
-
-                <!-- TARJETA 9 -->
-                <figure class="polaroid" data-category="actividades">
-                    <span class="polaroid-doodle estrella" aria-hidden="true">⭐</span>
-                    <div class="polaroid-media">
-                        <div class="polaroid-placeholder">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="white" opacity="0.6">
-                                <path
-                                    d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zm-10.5-4.5l2.5 3.01L16.5 12l4.5 6H3l3.5-4.5z" />
-                            </svg>
-                            Foto próximamente
-                        </div>
-                    </div>
-                    <figcaption>Trabajo en Equipo</figcaption>
+                    <figcaption>Uniforme Física Hombre</figcaption>
                 </figure>
 
             </div>
@@ -379,20 +355,26 @@
             <h3>Enlaces de Referencia</h3>
             <div class="logos-container">
                 <div class="logo-item">
-                    <img src="assets/images/sena.png" alt="Logo SENA" class="institutional-logo">
-                    <p class="institutional-text"><strong>SENA</strong><br><small>Servicio Nacional de
-                            Aprendizaje</small></p>
+                    <a href="https://portal.senasofiaplus.edu.co/" target="_blank" rel="noopener noreferrer" aria-label="Ir al portal SENA Sofia Plus">
+                        <img src="assets/images/sena.png" alt="Logo SENA" class="institutional-logo">
+                        <p class="institutional-text"><strong>SENA</strong><br><small>Servicio Nacional de
+                                Aprendizaje</small></p>
+                    </a>
                 </div>
                 <div class="logo-item">
-                    <img src="assets/images/logo_colgesan.png" alt="Logo IE General Santander"
-                        class="institutional-logo">
-                    <p class="institutional-text"><strong>Institución Educativa General Santander</strong></p>
+                    <a href="https://www.iecolgesan.edu.co/" target="_blank" rel="noopener noreferrer" aria-label="Ir al sitio de la IE General Santander">
+                        <img src="assets/images/logo_colgesan.png" alt="Logo IE General Santander"
+                            class="institutional-logo">
+                        <p class="institutional-text"><strong>Institución Educativa General Santander</strong></p>
+                    </a>
                 </div>
                 <div class="logo-item">
-                    <img src="assets/images/Ministerio de educacion.png" alt="Logo Ministerio de Educación"
-                        class="institutional-logo">
-                    <p class="institutional-text"><strong>Ministerio de Educación</strong><br><small>Nacional</small>
-                    </p>
+                    <a href="https://www.mineducacion.gov.co/portal/" target="_blank" rel="noopener noreferrer" aria-label="Ir al sitio del Ministerio de Educación Nacional">
+                        <img src="assets/images/Ministerio de educacion.png" alt="Logo Ministerio de Educación"
+                            class="institutional-logo">
+                        <p class="institutional-text"><strong>Ministerio de Educación</strong><br><small>Nacional</small>
+                        </p>
+                    </a>
                 </div>
             </div>
         </div>

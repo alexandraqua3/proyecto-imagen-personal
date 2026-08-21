@@ -401,25 +401,123 @@ a:hover {
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
     :root {
+        --nav-height: 150px;
         --footer-height: 320px;
+    }
+
+    .navbar {
+        height: auto;
+        min-height: var(--nav-height);
     }
 
     .navbar-container {
         flex-direction: column;
-        gap: var(--spacing-sm);
+        gap: var(--spacing-xs);
         padding: var(--spacing-sm) var(--spacing-md);
     }
 
+    .brand-logo {
+        height: 48px;
+    }
+
+    .brand-divider {
+        height: 36px;
+    }
+
+    .logo-container {
+        gap: 10px;
+    }
+
     .nav-menu {
-        gap: var(--spacing-md);
+        gap: var(--spacing-sm);
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    /* Footer institucional */
+    .logos-container {
+        gap: var(--spacing-md);
+    }
+
+    .logo-item {
+        max-width: 140px;
+    }
+
+    .institutional-logo {
+        height: 38px;
+    }
+
+    .institutional-text {
+        font-size: 0.72rem;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-section ul {
+        padding: 0;
     }
 
     .instagram-contact-container {
         flex-direction: column;
         text-align: center;
     }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --nav-height: 170px;
+    }
+
+    .brand-logo {
+        height: 40px;
+    }
+
+    .nav-menu {
+        gap: 0.6rem;
+    }
+
+    .nav-link {
+        font-size: 0.82rem;
+    }
+
+    .container {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .logos-container {
+        flex-direction: column;
+    }
+
+    .logo-item {
+        max-width: none;
+    }
+}
+
+/* Enlaces de logos del footer: sin subrayado ni color de texto heredado */
+.logo-item a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-item a:hover {
+    color: inherit;
+    opacity: 0.85;
+}
+
+.logo-item a img {
+    transition: transform 0.3s ease;
+}
+
+.logo-item a:hover img {
+    transform: scale(1.05);
 }
 
 /* === ACCESSIBILITY === */

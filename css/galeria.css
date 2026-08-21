@@ -28,10 +28,78 @@
    ------------------------------------------------------- */
 .galeria-header {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1.2fr 0.9fr 0.9fr;
     gap: var(--spacing-lg);
     align-items: start;
     margin-bottom: var(--spacing-xl);
+}
+
+/* -------------------------------------------------------
+   3.5 NUEVA TARJETA DE CITA EN EL ENCABEZADO
+   ------------------------------------------------------- */
+.galeria-header-quote-card {
+    background: #fff5f7;
+    border: 1.5px solid #fecdd3;
+    border-radius: 14px;
+    padding: 1.5rem 1.3rem;
+    position: relative;
+    box-shadow: 6px 10px 28px rgba(15, 23, 42, 0.08);
+    transform: rotate(-2.5deg);
+    min-width: 220px;
+    max-width: 280px;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-header-quote-card:hover {
+    transform: rotate(0deg) translateY(-5px);
+    box-shadow: 6px 12px 32px rgba(219, 39, 119, 0.15);
+}
+
+.galeria-header-quote-card::before {
+    content: '';
+    position: absolute;
+    top: -13px;
+    left: 40%;
+    transform: translateX(-50%) rotate(1.5deg);
+    width: 80px;
+    height: 24px;
+    background: rgba(124, 58, 237, 0.2);
+    backdrop-filter: blur(1px);
+    border-radius: 3px;
+}
+
+.quote-card-pin {
+    position: absolute;
+    top: -15px;
+    right: 15px;
+    font-size: 1.2rem;
+    transform: rotate(15deg);
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.quote-card-text {
+    font-family: 'Caveat', 'Comic Sans MS', cursive;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1.3;
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.quote-card-signature {
+    font-family: 'Caveat', 'Comic Sans MS', cursive;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #db2777;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .galeria-header-left {
@@ -443,11 +511,17 @@
 @media (max-width: 1024px) {
     .polaroid-grid { grid-template-columns: repeat(2,1fr); gap: 2rem 1.6rem; }
     .galeria-titulo { font-size: 3rem; }
+    .galeria-header {
+        grid-template-columns: 1.2fr 1fr;
+    }
 }
 
 @media (max-width: 768px) {
-    .galeria-header { grid-template-columns: 1fr; }
-    .galeria-postit { max-width:100%; transform:rotate(0deg); margin-top:0; }
+    .galeria-header { grid-template-columns: 1fr; justify-items: center; }
+    .galeria-header-left { width: 100%; }
+    .galeria-header-quote-card { max-width: 100%; width: 100%; transform: rotate(0deg); margin-top: 1rem; }
+    .galeria-header-quote-card::before { display: none; }
+    .galeria-postit { max-width:100%; width: 100%; transform:rotate(0deg); margin-top:1rem; }
     .galeria-postit::before { display:none; }
     .galeria-titulo { font-size: 2.6rem; }
     .galeria-camara-icon { width:52px; height:52px; }
@@ -774,4 +848,49 @@
 /* Modificador de aspecto vertical 9:16 para videos — sobrescribe el 4:3 base */
 .polaroid-media.aspecto-9-16 {
     aspect-ratio: 9 / 16;
+}
+
+/* -------------------------------------------------------
+    13. RESPONSIVE MÓVIL (sin afectar escritorio)
+    ------------------------------------------------------- */
+@media (max-width: 768px) {
+    /* El grid usa estilos inline (repeat(4,1fr)): se fuerza con !important */
+    .polaroid-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.6rem 1rem;
+    }
+
+    .video-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.6rem 1rem;
+    }
+
+    .galeria-subseccion-titulo {
+        font-size: 1.7rem;
+    }
+
+    .galeria-descripcion {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .polaroid-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .galeria-filtros {
+        justify-content: center;
+    }
+
+    .btn-galeria-mas {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.85rem;
+    }
 }

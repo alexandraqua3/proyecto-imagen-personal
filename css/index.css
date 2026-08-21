@@ -394,43 +394,101 @@ body {
 .interactive-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.5rem;
+    gap: 2rem;
     align-items: stretch;
+    padding-top: 0.5rem;
 }
 
 .interactive-card {
     border-radius: 24px;
-    padding: 1.75rem 1.5rem;
+    padding: 2rem 1.5rem 1.75rem;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     box-shadow: 0 18px 40px rgba(13, 35, 70, 0.08);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+/* Efecto "nota adhesiva" con leve inclinación, se endereza al pasar el mouse */
+.interactive-card:nth-child(1) { transform: rotate(-1.4deg); }
+.interactive-card:nth-child(2) { transform: rotate(1deg); }
+.interactive-card:nth-child(3) { transform: rotate(-0.8deg); }
+
+.interactive-card:nth-child(1):hover { transform: rotate(0deg) translateY(-8px) scale(1.02); }
+.interactive-card:nth-child(2):hover { transform: rotate(0deg) translateY(-8px) scale(1.02); }
+.interactive-card:nth-child(3):hover { transform: rotate(0deg) translateY(-8px) scale(1.02); }
+
+/* Pin decorativo estilo corcho */
+.interactive-card::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent-pin, var(--rojo-pastel));
+    box-shadow: 0 4px 8px rgba(13, 35, 70, 0.25), inset 0 2px 3px rgba(255, 255, 255, 0.5);
+    border: 2px solid #fff;
+    z-index: 2;
+}
+
+.interactive-card h3 {
+    font-size: 1.15rem;
+    display: inline-block;
+    width: fit-content;
+    padding-bottom: 2px;
+    background-image: linear-gradient(var(--accent-pin, var(--rojo-pastel)), var(--accent-pin, var(--rojo-pastel)));
+    background-repeat: no-repeat;
+    background-size: 100% 8px;
+    background-position: left 90%;
 }
 
 .card-reto {
+    --accent-pin: var(--azul-pastel);
     background: #e7f5ff;
 }
 
 .card-reto .polaroid-image {
-    position: absolute;
-    top: 1.5rem;
-    right: 1rem;
-    width: 115px;
-    border: 14px solid #fff;
-    border-bottom-width: 20px;
+    display: block;
+    width: 55%;
+    max-width: 160px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: top center;
+    align-self: center;
+    margin: 0.5rem 0;
+    border: 10px solid #fff;
+    border-bottom-width: 16px;
     border-radius: 18px;
     box-shadow: 0 18px 40px rgba(13, 35, 70, 0.16);
-    transform: rotate(3deg);
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease;
+}
+
+.card-reto:hover .polaroid-image {
+    transform: rotate(1deg) scale(1.04);
 }
 
 .card-reto .btn-interactive {
     margin-top: auto;
+    width: 100%;
+    background: linear-gradient(135deg, #4dabf7, #1c7ed6);
+    box-shadow: 0 10px 22px rgba(28, 126, 214, 0.3);
+}
+
+.btn-interactive span.arrow,
+.btn-interactive {
+    gap: 0.4rem;
 }
 
 .card-survey {
+    --accent-pin: var(--amarillo-pastel);
     background: #fffde7;
 }
 
@@ -438,24 +496,133 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
-    margin: 1rem 0 1.2rem;
+    margin: 0.75rem 0 1.2rem;
+}
+
+/* Chips de encuesta: ocultamos el radio nativo y diseñamos una pastilla amigable */
+.survey-option {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.65rem 1rem;
+    background: #fff;
+    border: 2px solid #ffe8a3;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.survey-option:hover {
+    transform: translateX(4px);
+    border-color: #ffc94a;
+    box-shadow: 0 6px 14px rgba(255, 201, 74, 0.25);
+}
+
+.survey-option input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    border: 2px solid #ffc94a;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.survey-option input[type="radio"]::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ffc94a;
+    transform: scale(0);
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.survey-option input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+.survey-option:has(input:checked) {
+    background: #fff3c4;
+    border-color: #ffc94a;
+}
+
+.card-survey .btn-interactive {
+    margin-top: auto;
+    width: 100%;
+    background: linear-gradient(135deg, #ffd43b, #ffa94d);
+    color: #4a3200;
+    box-shadow: 0 10px 22px rgba(255, 169, 77, 0.3);
+}
+
+.card-impact {
+    --accent-pin: var(--verde-pastel);
+    background: #f0faf3;
 }
 
 .impact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
-    margin-top: 1.25rem;
-    height: 100%;
+    gap: 0.85rem;
+    margin-top: 1rem;
 }
 
 .impact-metric {
-    background: #f8fafc;
+    background: #fff;
     border-radius: 18px;
-    padding: 1rem;
+    padding: 1.1rem 0.75rem;
     text-align: center;
-    min-height: 140px;
-    height: 100%;
+    box-shadow: 0 8px 18px rgba(13, 35, 70, 0.06);
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+}
+
+.impact-metric:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 22px rgba(13, 35, 70, 0.12);
+}
+
+.impact-metric strong {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #40c057, #12b886);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.impact-metric:nth-child(2) strong {
+    background: linear-gradient(135deg, #4dabf7, #1c7ed6);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.impact-metric:nth-child(3) strong {
+    background: linear-gradient(135deg, #ff8787, #ff3366);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.impact-metric:nth-child(4) strong {
+    background: linear-gradient(135deg, #ffd43b, #ffa94d);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.impact-metric small {
+    display: block;
+    margin-top: 0.2rem;
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
 }
 
 .interactive-middle-section {
@@ -603,16 +770,21 @@ body {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 6px 20px rgba(13, 35, 70, 0.10),
-                0 1px 4px rgba(13, 35, 70, 0.06);
+        0 1px 4px rgba(13, 35, 70, 0.06);
     border: 1.5px solid rgba(220, 220, 230, 0.5);
     transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
-                box-shadow 0.28s ease;
+        box-shadow 0.28s ease;
     display: flex;
     flex-direction: column;
 }
 
-.uniforme-foto-card:nth-child(odd)  { transform: rotate(-1.2deg); }
-.uniforme-foto-card:nth-child(even) { transform: rotate(1deg);  }
+.uniforme-foto-card:nth-child(odd) {
+    transform: rotate(-1.2deg);
+}
+
+.uniforme-foto-card:nth-child(even) {
+    transform: rotate(1deg);
+}
 
 .uniforme-foto-card:hover {
     transform: rotate(0deg) translateY(-6px) scale(1.03) !important;
@@ -634,7 +806,8 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top center;  /* prioriza cabeza/uniforme, no los pies */
+    object-position: top center;
+    /* prioriza cabeza/uniforme, no los pies */
     display: block;
     transition: transform 0.4s ease;
 }
@@ -1013,7 +1186,7 @@ body {
 
 .gallery-grid-5 {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     gap: 1rem;
     flex: 1;
 }
@@ -1042,10 +1215,10 @@ body {
 .gallery-item img,
 .gallery-item video {
     border-radius: 20px;
-    min-height: 140px;
-    height: 140px;
-    object-fit: cover;
     width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: top center;
 }
 
 .gallery-tag {
@@ -1101,6 +1274,12 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .interactive-card:nth-child(1),
+    .interactive-card:nth-child(2),
+    .interactive-card:nth-child(3) {
+        transform: rotate(0deg);
+    }
+
     /* En tablet: las 4 fotos se muestran en fila horizontal */
     .uniforme-fotos-grid {
         grid-template-columns: repeat(4, 1fr);
@@ -1108,7 +1287,7 @@ body {
     }
 
     .gallery-grid-5 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     }
 }
 
@@ -1186,12 +1365,18 @@ body {
 }
 
 .card-icon {
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.7rem;
+    background: #fff;
+    border-radius: 50%;
+    border: 3px solid var(--accent-pin, var(--rojo-pastel));
+    box-shadow: 0 8px 16px rgba(13, 35, 70, 0.1);
+    margin-bottom: 0.25rem;
 }
 
 .card-icon img {
@@ -1361,4 +1546,109 @@ body {
 
 .doodle-burst {
     font-size: 1.2rem;
+}
+
+/* =========================================
+   RESPONSIVE MÓVIL (sin afectar escritorio)
+   ========================================= */
+@media (max-width: 768px) {
+    .hero {
+        margin-top: 1.5rem;
+        padding: 1.5rem 1rem 2rem;
+    }
+
+    .hero-main-title {
+        font-size: 1.9rem;
+    }
+
+    .hero-badge {
+        font-size: 0.72rem;
+        padding: 0.35rem 0.9rem;
+    }
+
+    .hero-mascots-wrapper {
+        height: 260px;
+    }
+
+    .hero-card-postit {
+        transform: none;
+    }
+
+    .explore-title {
+        font-size: 1.5rem;
+    }
+
+    .explore-grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+    }
+
+    .explore-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 0.75rem;
+    }
+
+    .card-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.3rem;
+    }
+
+    /* Fotos de uniforme: 2 columnas en móvil */
+    .uniforme-fotos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .infografia-card,
+    .notebook-card {
+        padding: 1.4rem 1rem;
+    }
+
+    .infografia-card h3,
+    .notebook-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .interactive-card {
+        padding: 1.5rem 1.1rem 1.3rem;
+    }
+
+    .gallery-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .gallery-grid-5 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .slider-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-main-title {
+        font-size: 1.6rem;
+    }
+
+    .explore-grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid-5 {
+        grid-template-columns: 1fr;
+    }
+
+    .impact-grid {
+        gap: 0.6rem;
+    }
+
+    .btn-primary-hero {
+        font-size: 0.8rem;
+        padding: 0.7rem 1.2rem;
+        text-align: center;
+    }
 }
