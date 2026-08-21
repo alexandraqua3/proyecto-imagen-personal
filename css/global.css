@@ -405,9 +405,15 @@ a:hover {
         --footer-height: 320px;
     }
 
+    /* En móvil el navbar deja de ser fijo para no tapar el contenido */
     .navbar {
+        position: relative;
         height: auto;
         min-height: var(--nav-height);
+    }
+
+    body {
+        padding-top: 0;
     }
 
     .navbar-container {
