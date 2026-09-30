@@ -788,6 +788,8 @@ body {
 /* Infografía larga (vertical) en la columna central de gala */
 .infografia-larga img {
     aspect-ratio: 2 / 3;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* Galería inferior de uniformes en formato vertical 9:16 */
