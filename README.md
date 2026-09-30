@@ -15,13 +15,13 @@ Buscamos acompañar a la comunidad educativa a comprender que la pulcritud, el d
 ## 🛠️ Estructura del Sitio Web
 El sitio web consta de las siguientes páginas:
 - **`index.html` (Inicio):** Presentación del proyecto y desglose del Artículo 81 sobre los uniformes de diario (hombres/mujeres), gala y educación física.
-- **`sobre-mi.html` (Sobre Nosotros):** Información del equipo de 4 estudiantes especialistas encargados del proyecto.
+- **`sobre-nosotros.html` (Sobre Nosotros):** Información del equipo de 4 estudiantes encargados del proyecto.
 - **`uniforme.html` (Nuestro Uniforme):** Enfoque detallado en tres áreas:
   1. Uso Correcto del Uniforme
   2. Presentación Personal (pulcritud, accesorios, cabello)
   3. Buenas Prácticas del Estudiante Ejemplar
 - **`galeria.html` (Galería):** Muestra visual de los uniformes y las actividades realizadas.
-- **`contacto.html` (Contacto):** Información para contactar al equipo vía redes sociales (Instagram).
+- **`preguntas frecuentes.html` (Preguntas Frecuentes):** Respuestas sobre el uso del uniforme y la presentación personal.
 
 ---
 

@@ -19,7 +19,7 @@
    2. SECCIÓN PRINCIPAL
    ------------------------------------------------------- */
 #galeria {
-    padding: var(--spacing-xl) 0;
+    padding: 0.5 rem 0 var(--spacing-xl);
     position: relative;
 }
 
@@ -28,10 +28,38 @@
    ------------------------------------------------------- */
 .galeria-header {
     display: grid;
-    grid-template-columns: 1.2fr 0.9fr 0.9fr;
+    grid-template-columns: 0.75fr 1.2fr 0.9fr 0.9fr;
     gap: var(--spacing-lg);
     align-items: start;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: 3.5rem;
+    padding: 2rem;
+    position: relative;
+    isolation: isolate;
+    border: 1px solid rgba(124, 58, 237, 0.18);
+    border-radius: 26px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.76), rgba(253, 242, 248, 0.68));
+    box-shadow: 0 18px 42px rgba(124, 58, 237, 0.1);
+    backdrop-filter: blur(8px);
+}
+
+.galeria-header::after {
+    content: '';
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    bottom: -1.7rem;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(219, 39, 119, 0.42), rgba(124, 58, 237, 0.42), transparent);
+    z-index: -1;
+}
+
+.galeria-portada-foto {
+    margin-top: 1rem;
+    transform: rotate(-2deg);
+}
+
+.galeria-portada-foto .polaroid-media {
+    aspect-ratio: 3 / 4;
 }
 
 /* -------------------------------------------------------
@@ -48,6 +76,7 @@
     min-width: 220px;
     max-width: 280px;
     margin-top: 1rem;
+    align-self: stretch;
     display: flex;
     flex-direction: column;
     justify-content: center;

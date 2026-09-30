@@ -43,36 +43,29 @@ El proceso de migración se centró en tres pilares fundamentales: Limpieza de C
 
 ---
 
-## 📂 Estructura del Proyecto Refactorizado
+## 📂 Estructura del Proyecto
 
-La arquitectura del proyecto ahora sigue un patrón limpio y profesional:
+El sitio está organizado por páginas HTML, hojas CSS específicas y recursos compartidos:
 
 ```
-mi-estilo-mi-esencia/
-│
+proyecto-imagen-personal/
 ├── assets/
-│   ├── css/
-│   │   └── style.css            # Estilos principales (Bootstrap + Custom)
-│   ├── js/
-│   │   └── main.js            # Script principal (Formulario AJAX + Navegación)
 │   ├── images/
-│   │   ├── 
-│   │   └── ...                  # Imágenes optimizadas
-│   ├── images/escudo.jpg        # Logo de la Institución
-│   ├── images/IE_general_santander.png # Escudo de la Institución
-│   ├── images/IE_General_Santander.webp # Versión WebP optimizada
-│   └── images/logo.png          # Logo del proyecto
-│
-├── index.html                   # Página de inicio (Landing Page)
-├── sobre-mi.html                # Perfil y Experiencia
-├── servicios.html               # Catálogo de servicios
-├── paquetes.html                # Tarifas y paquetes
-├── estilo.html                  # Blog/Consejos de estilo
-├── calendario.html              # Calendario de eventos/cursos
-├── galeria.html                 # Portafolio fotográfico
-├── contacto.html                # Formulario de contacto y mapa
-├── aviso-privacidad.html        # Documento Legal
-└── terminos-condiciones.html   # Documento Legal
+│   └── videos/
+├── css/
+│   ├── global.css
+│   ├── index.css
+│   ├── sobre-nosotros.css
+│   ├── uniforme.css
+│   ├── galeria.css
+│   └── preguntas-frecuentes.css
+├── js/
+│   └── main.js
+├── index.html
+├── sobre-nosotros.html
+├── uniforme.html
+├── galeria.html
+└── preguntas frecuentes.html
 ```
 
 ---

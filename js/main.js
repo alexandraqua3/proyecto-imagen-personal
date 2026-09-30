@@ -133,60 +133,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const galleryViewport = document.querySelector('.gallery-viewport');
     const galleryTrack = document.querySelector('.gallery-grid-5');
     const galleryItems = galleryTrack ? [...galleryTrack.querySelectorAll('.gallery-item')] : [];
-    const galleryDots = document.querySelector('.slider-dots');
-    const previousButton = document.querySelector('.prev-btn');
-    const nextButton = document.querySelector('.next-btn');
 
-    if (galleryViewport && galleryTrack && galleryItems.length && galleryDots && previousButton && nextButton) {
-        let currentPage = 0;
+    if (galleryViewport && galleryTrack && galleryItems.length) {
+        const originalGroup = document.createElement('div');
+        originalGroup.className = 'gallery-loop-group';
+        originalGroup.append(...galleryItems);
 
-        const getItemsPerPage = () => {
-            if (window.innerWidth <= 480) return 1;
-            if (window.innerWidth <= 576) return 2;
-            if (window.innerWidth <= 1024) return 4;
-            return 5;
+        const duplicateGroup = originalGroup.cloneNode(true);
+        duplicateGroup.setAttribute('aria-hidden', 'true');
+        galleryTrack.replaceChildren(originalGroup, duplicateGroup);
+
+        const updateGalleryDuration = () => {
+            const distance = originalGroup.getBoundingClientRect().width;
+            galleryTrack.style.setProperty('--gallery-duration', `${distance / 45}s`);
         };
 
-        const renderGallery = () => {
-            const itemsPerPage = getItemsPerPage();
-            const pageCount = Math.ceil(galleryItems.length / itemsPerPage);
-            currentPage = Math.min(currentPage, pageCount - 1);
-            galleryDots.innerHTML = '';
-
-            for (let page = 0; page < pageCount; page += 1) {
-                const dot = document.createElement('button');
-                dot.type = 'button';
-                dot.className = `dot${page === currentPage ? ' active' : ''}`;
-                dot.setAttribute('aria-label', `Ir a la página ${page + 1}`);
-                dot.addEventListener('click', () => {
-                    currentPage = page;
-                    renderGallery();
-                });
-                galleryDots.appendChild(dot);
-            }
-
-            const pageWidth = galleryViewport.clientWidth;
-            galleryTrack.style.transform = `translateX(-${currentPage * pageWidth}px)`;
-            previousButton.disabled = currentPage === 0;
-            nextButton.disabled = currentPage === pageCount - 1;
-        };
-
-        previousButton.addEventListener('click', () => {
-            if (currentPage > 0) {
-                currentPage -= 1;
-                renderGallery();
-            }
-        });
-
-        nextButton.addEventListener('click', () => {
-            if (currentPage < Math.ceil(galleryItems.length / getItemsPerPage()) - 1) {
-                currentPage += 1;
-                renderGallery();
-            }
-        });
-
-        window.addEventListener('resize', renderGallery);
-        renderGallery();
+        updateGalleryDuration();
+        window.addEventListener('resize', updateGalleryDuration);
     }
 });
 
