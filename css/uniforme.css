@@ -142,7 +142,7 @@ body {
     min-width: 0;
 }
 
-.uniforme-video-polaroid {
+.uniforme-imagen-polaroid {
     position: relative;
     width: min(100%, 260px);
     margin: 0 auto;
@@ -155,7 +155,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.uniforme-video-polaroid::before {
+.uniforme-imagen-polaroid::before {
     content: '';
     position: absolute;
     top: -10px;
@@ -167,19 +167,19 @@ body {
     z-index: 1;
 }
 
-.uniforme-video-polaroid:hover {
+.uniforme-imagen-polaroid:hover {
     transform: rotate(0) translateY(-4px);
     box-shadow: 0 18px 36px rgba(15, 23, 42, 0.2);
 }
 
-.uniforme-video-media {
+.uniforme-imagen-media {
     width: 100%;
     aspect-ratio: 9 / 16;
     overflow: hidden;
     background: linear-gradient(135deg, #fff0f5, #e8f4ff);
 }
 
-.uniforme-video-media video {
+.uniforme-imagen-media img {
     display: block;
     width: 100%;
     height: 100%;
@@ -187,7 +187,7 @@ body {
     object-position: center;
 }
 
-.uniforme-video-polaroid figcaption {
+.uniforme-imagen-polaroid figcaption {
     padding: 0.7rem 0.45rem 0.85rem;
     color: var(--primary-color);
     font-size: 0.8rem;
@@ -304,7 +304,7 @@ body {
         grid-template-columns: minmax(0, 1fr);
     }
 
-    .uniforme-video-polaroid {
+    .uniforme-imagen-polaroid {
         width: min(100%, 230px);
     }
 }
