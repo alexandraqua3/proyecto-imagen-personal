@@ -252,6 +252,37 @@
     color: #6d2f75;
 }
 
+.hero-note p + p {
+    margin-top: 12px;
+}
+
+.manual-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 18px auto 0;
+    padding: 14px 18px;
+    background: var(--azul-pastel);
+    border: 1px solid rgba(30, 41, 59, 0.14);
+    border-radius: 8px;
+    color: var(--primary-color);
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 10px 22px rgba(30, 41, 59, 0.12);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.manual-btn:hover {
+    background: #97b8f5;
+    transform: translateY(-2px);
+}
+
+.contact-hero .hero-copy {
+    text-align: center;
+}
+
 .hero-qr-panel {
     display: grid;
     justify-content: center;
